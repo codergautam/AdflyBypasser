@@ -41,11 +41,6 @@ div.fixed {
 </div>
 <div class="fixed">
 <h3>
-    <a href="api.html">API</a>
-    <br>
-    <a href="https://discord.gg/2scjJ4x">Discord</a>
-    <br>
-    <a href="https://github.com/codergautam/linkunshortener">Githujkljklb</a>
 </h4>
 </div>
 </center>
@@ -61,8 +56,7 @@ bypass(url)
 
 
 function bypass(url) {
-    var api = "https://linkunshortener.herokuapp.com/api?url="
-    fetch(api+url).then(r=>r.json().then(json => {
+    fetch("/api?url="+url).then(r=>r.json().then(json => {
        if(json.success) {
         document.getElementById("h").innerHTML = "Bypassed "+json.type+"!";
            document.getElementById("ad").href = json.bypassedlink
